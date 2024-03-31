@@ -46,7 +46,7 @@ importers:
     dependencies:
       '@antfu/eslint-config':
         specifier: ^2.11.6
-        version: 2.11.6(@vue/compiler-sfc@3.4.21)(eslint-plugin-svelte@2.35.1)(eslint@8.57.0)(svelte-eslint-parser@0.33.1)(svelte@4.2.12)(typescript@5.4.3)(vitest@1.4.0)
+        version: 2.11.6(@vue/compiler-sfc@3.4.21)(eslint-plugin-svelte@2.36.0-next.13)(eslint@8.57.0)(svelte-eslint-parser@0.33.1)(svelte@4.2.12)(typescript@5.4.3)(vitest@1.4.0)
       '@huntabyte/eslint-plugin':
         specifier: workspace:*
         version: link:../eslint-plugin
@@ -56,6 +56,9 @@ importers:
       eslint-plugin-svelte:
         specifier: ^2.35.1
         version: 2.35.1(eslint@8.57.0)(svelte@4.2.12)
+      local-pkg:
+        specifier: ^0.5.0
+        version: 0.5.0
       svelte-eslint-parser:
         specifier: ^0.33.1
         version: 0.33.1(svelte@4.2.12)
@@ -140,7 +143,7 @@ packages:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
 
-  /@antfu/eslint-config@2.11.6(@vue/compiler-sfc@3.4.21)(eslint-plugin-svelte@2.35.1)(eslint@8.57.0)(svelte-eslint-parser@0.33.1)(svelte@4.2.12)(typescript@5.4.3)(vitest@1.4.0):
+  /@antfu/eslint-config@2.11.6(@vue/compiler-sfc@3.4.21)(eslint-plugin-svelte@2.36.0-next.13)(eslint@8.57.0)(svelte-eslint-parser@0.33.1)(svelte@4.2.12)(typescript@5.4.3)(vitest@1.4.0):
     resolution: {integrity: sha512-v8f1uskX9w3c7IwvQu1pw02d19qc0o//LjILVlzv3B81bsO22x4hJkwQdJEhvypR3Z82vhCnCXfa6yoMddW1pg==}
     hasBin: true
     peerDependencies:
@@ -198,7 +201,7 @@ packages:
       eslint-plugin-n: 16.6.2(eslint@8.57.0)
       eslint-plugin-no-only-tests: 3.1.0
       eslint-plugin-perfectionist: 2.7.0(eslint@8.57.0)(svelte-eslint-parser@0.33.1)(svelte@4.2.12)(typescript@5.4.3)(vue-eslint-parser@9.4.2)
-      eslint-plugin-svelte: 2.35.1(eslint@8.57.0)(svelte@4.2.12)
+      eslint-plugin-svelte: 2.36.0-next.13(eslint@8.57.0)(svelte@4.2.12)
       eslint-plugin-toml: 0.10.0(eslint@8.57.0)
       eslint-plugin-unicorn: 51.0.1(eslint@8.57.0)
       eslint-plugin-unused-imports: 3.1.0(@typescript-eslint/eslint-plugin@7.4.0)(eslint@8.57.0)
@@ -2741,7 +2744,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - ts-node
-    dev: true
 
   /eslint-plugin-toml@0.10.0(eslint@8.57.0):
     resolution: {integrity: sha512-HzhRjePs4FDszPRY6ryHXV90MsSEkJsWnP175x33Iop/W6/hb80qjzImO5LlQfqhX3B0TkotOFSIigNI4AdGsw==}
@@ -3705,7 +3707,6 @@ packages:
 
   /known-css-properties@0.30.0:
     resolution: {integrity: sha512-VSWXYUnsPu9+WYKkfmJyLKtIvaRJi1kXUqVmBACORXZQxT5oZDsoZ2vQP+bQFDnWtpI/4eq3MLoRMjI2fnLzTQ==}
-    dev: true
 
   /levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
@@ -5007,7 +5008,6 @@ packages:
       postcss: 8.4.38
       postcss-scss: 4.0.9(postcss@8.4.38)
       svelte: 4.2.12
-    dev: true
 
   /svelte-hmr@0.15.3(svelte@4.2.12):
     resolution: {integrity: sha512-41snaPswvSf8TJUhlkoJBekRrABDXDMdpNpT2tfHIv4JuhgvHqLMhEPGtaQn0BmbNSTkuz2Ed20DF2eHw0SmBQ==}

@@ -4,6 +4,7 @@ import antfu, {
 	type TypedFlatConfigItem,
 } from '@antfu/eslint-config';
 import pluginHuntabyte from '@huntabyte/eslint-plugin';
+import { isPackageExists } from 'local-pkg';
 import type { FlatConfigPipeline } from 'eslint-flat-config-utils';
 
 export type Options = OptionsConfig & TypedFlatConfigItem;
@@ -13,20 +14,21 @@ export type UserConfig = Awaitable<
 
 const DEFAULT_IGNORES = ['**/.svelte-kit', '**/dist', '**/build', '**/static', '**/*.md'];
 
-const defaultOptions = {
+const defaultOptions: Options = {
 	stylistic: false,
 	jsonc: false,
 	ignores: DEFAULT_IGNORES,
 	typescript: true,
-	svelte: true,
-} satisfies Options;
+	svelte: false,
+};
 
 export function huntabyte(
 	options?: Options,
 	...userConfigs: UserConfig[]
 ): FlatConfigPipeline<TypedFlatConfigItem> {
+	defaultOptions.svelte = isPackageExists('svelte');
+
 	const withDefaults = { ...defaultOptions, ...options };
-	const { svelte } = withDefaults;
 
 	const factory = antfu(withDefaults, ...userConfigs)
 		.override('antfu:javascript', {
@@ -69,7 +71,7 @@ export function huntabyte(
 		.remove('antfu:perfectionist')
 		.remove('antfu:disables:cli');
 
-	if (svelte) {
+	if (withDefaults.svelte) {
 		return factory
 			.override('antfu:svelte:setup', {
 				name: 'huntabyte:svelte:setup',
