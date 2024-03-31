@@ -1,0 +1,39 @@
+{
+	"name": "root",
+	"version": "0.0.0",
+	"description": "Monorepo for huntabyte's eslint configs/plugins.",
+	"author": {
+		"name": "huntabyte",
+		"url": "https://x.com/huntabyte"
+	},
+	"private": true,
+	"scripts": {
+		"dev": "pnpm --parallel dev",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write .",
+		"build": "pnpm -r build"
+	},
+	"engines": {
+		"pnpm": ">=8",
+		"node": ">=18"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/huntabyte/eslint-plugin-huntabyte.git"
+	},
+	"license": "MIT",
+	"type": "module",
+	"devDependencies": {
+		"@changesets/cli": "^2.27.1",
+		"@huntabyte/eslint-plugin": "workspace:*",
+		"@huntabyte/eslint-config": "workspace:*",
+		"@svitejs/changesets-changelog-github-compact": "^1.1.0",
+		"eslint": "^8.57.0",
+		"eslint-plugin-svelte": "2.36.0-next.13",
+		"prettier": "^3.2.5",
+		"prettier-plugin-svelte": "^3.2.2",
+		"prettier-plugin-tailwindcss": "^0.5.12",
+		"svelte": "^4.2.12",
+		"svelte-eslint-parser": "^0.33.1"
+	}
+}
