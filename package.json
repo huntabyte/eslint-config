@@ -13,7 +13,7 @@
 		"dev": "pnpm --parallel dev",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
-		"build:packages": "pnpm -F \"./packages/**\" --parallel build",
+		"build:packages": "pnpm -F \"./packages/**\" -r build",
 		"ci:publish": "pnpm build:packages && changeset publish"
 	},
 	"engines": {
