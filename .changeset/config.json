@@ -2,7 +2,7 @@
 	"$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
 	"changelog": [
 		"@svitejs/changesets-changelog-github-compact",
-		{ "repo": "huntabyte/eslint-plugin-huntabyte" }
+		{ "repo": "huntabyte/eslint-config" }
 	],
 	"commit": false,
 	"fixed": [],
@@ -10,5 +10,5 @@
 	"access": "public",
 	"baseBranch": "main",
 	"updateInternalDependencies": "patch",
-	"ignore": []
+	"ignore": ["plugin-playground"]
 }

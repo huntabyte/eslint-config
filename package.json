@@ -1,17 +1,20 @@
 {
 	"name": "root",
 	"version": "0.0.0",
-	"description": "Monorepo for huntabyte's eslint configs/plugins.",
+	"description": "Monorepo for Hunter's ESLint config/plugins.",
 	"author": {
 		"name": "huntabyte",
 		"url": "https://x.com/huntabyte"
 	},
+	"funding": "https://github.com/sponsors/huntabyte",
+	"homepage": "https://github.com/huntabyte/eslint-config",
 	"private": true,
 	"scripts": {
 		"dev": "pnpm --parallel dev",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
-		"build": "pnpm -r build"
+		"build:packages": "pnpm -F \"./packages/**\" --parallel build",
+		"ci:publish": "pnpm build:packages && changeset publish"
 	},
 	"engines": {
 		"pnpm": ">=8",
@@ -19,7 +22,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/huntabyte/eslint-plugin-huntabyte.git"
+		"url": "https://github.com/huntabyte/eslint-config.git"
 	},
 	"license": "MIT",
 	"type": "module",

@@ -1,9 +1,11 @@
 {
 	"name": "@huntabyte/eslint-plugin",
 	"version": "0.0.0",
-	"description": "ESLint plugins.",
+	"description": "Hunter's ESLint Plugin",
 	"license": "MIT",
 	"type": "module",
+	"funding": "https://github.com/sponsors/huntabyte",
+	"homepage": "https://github.com/huntabyte/eslint-config",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/huntabyte/eslint-plugin.git",

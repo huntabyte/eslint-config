@@ -32,6 +32,9 @@ export function huntabyte(
 
 	const factory = antfu(withDefaults, ...userConfigs)
 		.override('antfu:javascript', {
+			plugins: {
+				huntabyte: pluginHuntabyte,
+			},
 			rules: {
 				'no-unused-vars': [
 					'error',
@@ -49,9 +52,6 @@ export function huntabyte(
 				],
 				'huntabyte/top-level-function': 'error',
 			},
-			plugins: {
-				huntabyte: pluginHuntabyte,
-			},
 		})
 		.override('antfu:typescript:setup', {
 			plugins: {
@@ -68,8 +68,7 @@ export function huntabyte(
 				'ts/consistent-type-definitions': ['error', 'type'],
 			},
 		})
-		.remove('antfu:perfectionist')
-		.remove('antfu:disables:cli');
+		.remove('antfu:perfectionist');
 
 	if (withDefaults.svelte) {
 		return factory
