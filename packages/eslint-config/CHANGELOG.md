@@ -1,5 +1,11 @@
 # @huntabyte/eslint-config
 
+## 0.0.2
+
+### Patch Changes
+
+- chore: export `DEFAULT_IGNORES` ([#3](https://github.com/huntabyte/eslint-config/pull/3))
+
 ## 0.0.1
 
 ### Patch Changes
