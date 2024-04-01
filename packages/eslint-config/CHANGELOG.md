@@ -1,5 +1,11 @@
 # @huntabyte/eslint-config
 
+## 0.1.0
+
+### Minor Changes
+
+- feat: initialization CLI ([#5](https://github.com/huntabyte/eslint-config/pull/5))
+
 ## 0.0.2
 
 ### Patch Changes
