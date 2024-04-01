@@ -1,6 +1,6 @@
 {
 	"name": "@huntabyte/eslint-config",
-	"version": "0.0.2",
+	"version": "0.1.0",
 	"description": "Hunter's ESLint Config.",
 	"license": "MIT",
 	"type": "module",
