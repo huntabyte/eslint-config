@@ -12,7 +12,7 @@ export type UserConfig = Awaitable<
 	TypedFlatConfigItem | TypedFlatConfigItem[] | FlatConfigPipeline<any>
 >;
 
-const DEFAULT_IGNORES = ['**/.svelte-kit', '**/dist', '**/build', '**/static', '**/*.md'];
+export const DEFAULT_IGNORES = ['**/.svelte-kit', '**/dist', '**/build', '**/static', '**/*.md'];
 
 const defaultOptions: Options = {
 	stylistic: false,
