@@ -5,11 +5,12 @@ import antfu, {
 } from '@antfu/eslint-config';
 import pluginHuntabyte from '@huntabyte/eslint-plugin';
 import { isPackageExists } from 'local-pkg';
-import type { FlatConfigPipeline } from 'eslint-flat-config-utils';
+import type { FlatConfigComposer } from 'eslint-flat-config-utils';
 
 export type Options = OptionsConfig & TypedFlatConfigItem;
 export type UserConfig = Awaitable<
-	TypedFlatConfigItem | TypedFlatConfigItem[] | FlatConfigPipeline<any>
+	// eslint-disable-next-line ts/no-explicit-any
+	TypedFlatConfigItem | TypedFlatConfigItem[] | FlatConfigComposer<any>
 >;
 
 export const DEFAULT_IGNORES = ['**/.svelte-kit', '**/dist', '**/build', '**/static', '**/*.md'];
@@ -25,13 +26,13 @@ const defaultOptions: Options = {
 export function huntabyte(
 	options?: Options,
 	...userConfigs: UserConfig[]
-): FlatConfigPipeline<TypedFlatConfigItem> {
+): FlatConfigComposer<TypedFlatConfigItem> {
 	defaultOptions.svelte = isPackageExists('svelte');
 
 	const withDefaults = { ...defaultOptions, ...options };
 
 	const factory = antfu(withDefaults, ...userConfigs)
-		.override('antfu:javascript', {
+		.override('antfu/javascript/rules', {
 			plugins: {
 				huntabyte: pluginHuntabyte,
 			},
@@ -53,17 +54,17 @@ export function huntabyte(
 				'huntabyte/top-level-function': 'error',
 			},
 		})
-		.override('antfu:typescript:setup', {
+		.override('antfu/typescript/setup', {
 			plugins: {
 				huntabyte: pluginHuntabyte,
 			},
 		})
-		.override('antfu:unicorn', {
+		.override('antfu/unicorn/rules', {
 			rules: {
 				'unicorn/prefer-dom-node-text-content': 'off',
 			},
 		})
-		.override('antfu:typescript:rules', {
+		.override('antfu/typescript/rules', {
 			rules: {
 				'ts/consistent-type-definitions': ['error', 'type'],
 				'ts/ban-types': [
@@ -81,14 +82,14 @@ export function huntabyte(
 
 	if (withDefaults.svelte) {
 		return factory
-			.override('antfu:svelte:setup', {
-				name: 'huntabyte:svelte:setup',
+			.override('antfu/svelte/setup', {
+				name: 'huntabyte/svelte/setup',
 				plugins: {
 					huntabyte: pluginHuntabyte,
 				},
 			})
-			.override('antfu:svelte:rules', {
-				name: 'huntabyte:svelte:rules',
+			.override('antfu/svelte/rules', {
+				name: 'huntabyte/svelte/rules',
 				rules: {
 					'no-unused-vars': 'off',
 					'unused-imports/no-unused-vars': [

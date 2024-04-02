@@ -16,6 +16,7 @@ export async function updatePackageJson(result: PromptResult) {
 	p.log.step(c.cyan(`Bumping @huntabyte/eslint-config to v${pkgJson.version}`));
 
 	const pkgContent = await fsp.readFile(pathPackageJSON, 'utf-8');
+	// eslint-disable-next-line ts/no-explicit-any
 	const pkg: Record<string, any> = JSON.parse(pkgContent);
 
 	pkg.dependencies ??= {};
