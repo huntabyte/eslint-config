@@ -1,5 +1,11 @@
 # @huntabyte/eslint-config
 
+## 0.2.0
+
+### Minor Changes
+
+- update to latest antfu rule names ([#10](https://github.com/huntabyte/eslint-config/pull/10))
+
 ## 0.1.1
 
 ### Patch Changes
