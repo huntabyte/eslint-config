@@ -66,9 +66,18 @@ export function huntabyte(
 		.override('antfu:typescript:rules', {
 			rules: {
 				'ts/consistent-type-definitions': ['error', 'type'],
+				'ts/ban-types': [
+					'error',
+					{
+						extendDefaults: true,
+						types: {
+							'{}': false,
+						},
+					},
+				],
+				'ts/no-explicit-any': 'error',
 			},
-		})
-		.remove('antfu:perfectionist');
+		});
 
 	if (withDefaults.svelte) {
 		return factory
