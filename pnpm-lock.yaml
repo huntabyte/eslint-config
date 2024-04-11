@@ -170,7 +170,7 @@ importers:
         version: 5.4.3
       vite:
         specifier: ^5.0.3
-        version: 5.2.7(@types/node@20.12.3)
+        version: 5.2.7(@types/node@20.12.2)
 
   playgrounds/v5-playground:
     devDependencies:
@@ -197,7 +197,7 @@ importers:
         version: 5.4.3
       vite:
         specifier: ^5.0.3
-        version: 5.2.7(@types/node@20.12.3)
+        version: 5.2.7(@types/node@20.12.2)
 
 packages:
 
@@ -1489,7 +1489,7 @@ packages:
       sirv: 2.0.4
       svelte: 5.0.0-next.100
       tiny-glob: 0.2.9
-      vite: 5.2.7(@types/node@20.12.3)
+      vite: 5.2.7(@types/node@20.12.2)
     dev: true
 
   /@sveltejs/kit@2.5.5(@sveltejs/vite-plugin-svelte@3.0.2)(svelte@4.2.12)(vite@5.2.7):
@@ -1516,7 +1516,7 @@ packages:
       sirv: 2.0.4
       svelte: 4.2.12
       tiny-glob: 0.2.9
-      vite: 5.2.7(@types/node@20.12.3)
+      vite: 5.2.7(@types/node@20.12.2)
     dev: true
 
   /@sveltejs/vite-plugin-svelte-inspector@2.0.0(@sveltejs/vite-plugin-svelte@3.0.0-next.3)(svelte@5.0.0-next.100)(vite@5.2.7):
@@ -1530,7 +1530,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 3.0.0-next.3(svelte@5.0.0-next.100)(vite@5.2.7)
       debug: 4.3.4
       svelte: 5.0.0-next.100
-      vite: 5.2.7(@types/node@20.12.3)
+      vite: 5.2.7(@types/node@20.12.2)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1546,7 +1546,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 3.0.2(svelte@4.2.12)(vite@5.2.7)
       debug: 4.3.4
       svelte: 4.2.12
-      vite: 5.2.7(@types/node@20.12.3)
+      vite: 5.2.7(@types/node@20.12.2)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1565,7 +1565,7 @@ packages:
       magic-string: 0.30.8
       svelte: 5.0.0-next.100
       svelte-hmr: 0.15.3(svelte@5.0.0-next.100)
-      vite: 5.2.7(@types/node@20.12.3)
+      vite: 5.2.7(@types/node@20.12.2)
       vitefu: 0.2.5(vite@5.2.7)
     transitivePeerDependencies:
       - supports-color
@@ -1585,7 +1585,7 @@ packages:
       magic-string: 0.30.8
       svelte: 4.2.12
       svelte-hmr: 0.15.3(svelte@4.2.12)
-      vite: 5.2.7(@types/node@20.12.3)
+      vite: 5.2.7(@types/node@20.12.2)
       vitefu: 0.2.5(vite@5.2.7)
     transitivePeerDependencies:
       - supports-color
@@ -5968,7 +5968,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.2.7(@types/node@20.12.3)
+      vite: 5.2.7(@types/node@20.12.2)
     dev: true
 
   /vitest@1.4.0(@types/node@20.12.2):
