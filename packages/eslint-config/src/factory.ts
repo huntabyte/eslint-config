@@ -33,16 +33,7 @@ export function huntabyte(
 
 	const withDefaults = { ...defaultOptions, ...options };
 
-	const factory = antfu(
-		withDefaults,
-		withDefaults.svelte
-			? {
-					files: ['*.svelte.js'],
-					plugins: {},
-				}
-			: {},
-		...userConfigs
-	)
+	const factory = antfu(withDefaults, ...userConfigs)
 		.override('antfu/javascript/rules', {
 			plugins: {
 				huntabyte: pluginHuntabyte,
@@ -90,10 +81,11 @@ export function huntabyte(
 				plugins: {
 					huntabyte: pluginHuntabyte,
 				},
+				files: ['**/*.svelte'],
 			})
 			.override('antfu/svelte/rules', {
 				name: 'huntabyte/svelte/rules',
-				files: ['*.svelte'],
+				files: ['**/*.svelte'],
 				languageOptions: {
 					parser: parserSvelte,
 				},
