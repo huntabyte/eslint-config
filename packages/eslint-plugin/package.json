@@ -1,6 +1,6 @@
 {
 	"name": "@huntabyte/eslint-plugin",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"description": "Hunter's ESLint Plugin",
 	"license": "MIT",
 	"type": "module",

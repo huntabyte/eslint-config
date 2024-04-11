@@ -1,5 +1,16 @@
 # @huntabyte/eslint-config
 
+## 0.3.0
+
+### Minor Changes
+
+- update to latest eslint and svelte plugins/parsers ([#12](https://github.com/huntabyte/eslint-config/pull/12))
+
+### Patch Changes
+
+- Updated dependencies [[`2262b00dc54956bb5c1478e6e720d77f5740be05`](https://github.com/huntabyte/eslint-config/commit/2262b00dc54956bb5c1478e6e720d77f5740be05)]:
+  - @huntabyte/eslint-plugin@0.1.0
+
 ## 0.2.0
 
 ### Minor Changes
