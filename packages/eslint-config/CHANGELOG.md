@@ -1,5 +1,11 @@
 # @huntabyte/eslint-config
 
+## 0.3.1
+
+### Patch Changes
+
+- update globs and eslint ([#14](https://github.com/huntabyte/eslint-config/pull/14))
+
 ## 0.3.0
 
 ### Minor Changes
