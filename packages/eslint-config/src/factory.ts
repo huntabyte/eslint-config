@@ -6,6 +6,8 @@ import antfu, {
 import pluginHuntabyte from '@huntabyte/eslint-plugin';
 import { isPackageExists } from 'local-pkg';
 import type { FlatConfigComposer } from 'eslint-flat-config-utils';
+import parserSvelte from 'svelte-eslint-parser';
+import parserTypescript from '@typescript-eslint/parser';
 
 export type Options = OptionsConfig & TypedFlatConfigItem;
 export type UserConfig = Awaitable<
@@ -31,7 +33,16 @@ export function huntabyte(
 
 	const withDefaults = { ...defaultOptions, ...options };
 
-	const factory = antfu(withDefaults, ...userConfigs)
+	const factory = antfu(
+		withDefaults,
+		withDefaults.svelte
+			? {
+					files: ['*.svelte.js'],
+					plugins: {},
+				}
+			: {},
+		...userConfigs
+	)
 		.override('antfu/javascript/rules', {
 			plugins: {
 				huntabyte: pluginHuntabyte,
@@ -67,9 +78,10 @@ export function huntabyte(
 		.override('antfu/typescript/rules', {
 			rules: {
 				'ts/consistent-type-definitions': ['error', 'type'],
+				'ts/no-explicit-any': 'error',
 			},
 		})
-		.remove('antfu:perfectionist');
+		.remove('antfu/perfectionist/setup');
 
 	if (withDefaults.svelte) {
 		return factory
@@ -81,6 +93,10 @@ export function huntabyte(
 			})
 			.override('antfu/svelte/rules', {
 				name: 'huntabyte/svelte/rules',
+				files: ['*.svelte'],
+				languageOptions: {
+					parser: parserSvelte,
+				},
 				rules: {
 					'no-unused-vars': 'off',
 					'unused-imports/no-unused-vars': [
@@ -105,6 +121,29 @@ export function huntabyte(
 					],
 					'prefer-const': 'off',
 					'huntabyte/top-level-function': 'error',
+				},
+			})
+			.append({
+				name: 'huntabyte/svelte-ts/rules',
+				files: ['**/*.svelte.ts'],
+				languageOptions: {
+					parser: parserSvelte,
+					parserOptions: {
+						parser: parserTypescript,
+					},
+				},
+				rules: {
+					'prefer-const': 'off',
+				},
+			})
+			.append({
+				name: 'huntabyte/svelte-js/rules',
+				files: ['**/*.svelte.js'],
+				languageOptions: {
+					parser: parserSvelte,
+				},
+				rules: {
+					'prefer-const': 'off',
 				},
 			});
 	}
