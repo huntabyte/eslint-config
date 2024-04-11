@@ -28,15 +28,15 @@
 	"type": "module",
 	"devDependencies": {
 		"@changesets/cli": "^2.27.1",
-		"@huntabyte/eslint-plugin": "workspace:*",
 		"@huntabyte/eslint-config": "workspace:*",
+		"@huntabyte/eslint-plugin": "workspace:*",
 		"@svitejs/changesets-changelog-github-compact": "^1.1.0",
-		"eslint": "^8.57.0",
-		"eslint-plugin-svelte": "2.36.0-next.13",
+		"eslint": "^9.0.0",
+		"eslint-plugin-svelte": "2.37.0",
 		"prettier": "^3.2.5",
 		"prettier-plugin-svelte": "^3.2.2",
 		"prettier-plugin-tailwindcss": "^0.5.12",
-		"svelte": "^4.2.12",
-		"svelte-eslint-parser": "^0.33.1"
+		"svelte": "5.0.0-next.100",
+		"svelte-eslint-parser": "^0.34.1"
 	}
 }
