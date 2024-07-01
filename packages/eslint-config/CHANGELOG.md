@@ -1,5 +1,11 @@
 # @huntabyte/eslint-config
 
+## 0.3.2
+
+### Patch Changes
+
+- chore: updates and tidy up versions ([#16](https://github.com/huntabyte/eslint-config/pull/16))
+
 ## 0.3.1
 
 ### Patch Changes
