@@ -1,19 +1,20 @@
 import antfu, {
 	type Awaitable,
+	type ConfigNames,
 	type OptionsConfig,
 	type TypedFlatConfigItem,
 } from '@antfu/eslint-config';
 import pluginHuntabyte from '@huntabyte/eslint-plugin';
-import { isPackageExists } from 'local-pkg';
 import type { FlatConfigComposer } from 'eslint-flat-config-utils';
 import parserSvelte from 'svelte-eslint-parser';
 import parserTypescript from '@typescript-eslint/parser';
+import type { Linter } from 'eslint';
 
 export type Options = OptionsConfig & TypedFlatConfigItem;
 export type UserConfig = Awaitable<
 	// eslint-disable-next-line ts/no-explicit-any
-	TypedFlatConfigItem | TypedFlatConfigItem[] | FlatConfigComposer<any>
->;
+	TypedFlatConfigItem | TypedFlatConfigItem[] | FlatConfigComposer<any, any> | Linter.FlatConfig[]
+>[];
 
 export const DEFAULT_IGNORES = ['**/.svelte-kit', '**/dist', '**/build', '**/static', '**/*.md'];
 
@@ -28,9 +29,13 @@ const defaultOptions: Options = {
 export function huntabyte(
 	options?: Options,
 	...userConfigs: UserConfig[]
-): FlatConfigComposer<TypedFlatConfigItem> {
-	defaultOptions.svelte = isPackageExists('svelte');
-
+): FlatConfigComposer<
+	TypedFlatConfigItem,
+	| Exclude<ConfigNames, 'antfu/svelte/setup' | 'antfu/svelte/rules'>
+	| 'huntabyte/svelte/setup'
+	| 'huntabyte/svelte/rules'
+	| 'huntabyte/svelte-ts/rules'
+> {
 	const withDefaults = { ...defaultOptions, ...options };
 
 	const factory = antfu(withDefaults, ...userConfigs)
@@ -91,6 +96,7 @@ export function huntabyte(
 				},
 				rules: {
 					'no-unused-vars': 'off',
+					'svelte/valid-compile': 'off',
 					'unused-imports/no-unused-vars': [
 						'error',
 						{
